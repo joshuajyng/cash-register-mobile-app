@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="A1.Views.addnewprod"
+             Title="Add New Product">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="NEW PRODUCT" VerticalOptions="Center" Padding="20,20"></Label>
+            <Grid Padding="35,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition  Height="3*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="2.4*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label  Text="Product Name" VerticalOptions="Center"></Label>
+                <Label  Text="Price" Grid.Row="1" VerticalOptions="Center"></Label>
+                <Label  Text="Quantity" Grid.Row="2" VerticalOptions="Center"></Label>
+
+                <Entry x:Name ="pname" Grid.Column="1" VerticalOptions="Center"></Entry>
+                <Entry x:Name ="pprice" Grid.Row="1" Grid.Column="1"  VerticalOptions="Center"></Entry>
+                <Entry x:Name ="pquant" Grid.Row="2" Grid.Column="1"  VerticalOptions="Center"></Entry>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Clicked="save"/>
+        <ToolbarItem Text="Cancel" Clicked="cancel"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>

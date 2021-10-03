@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="A1.Views.maincashreg">
+    <NavigationPage.TitleView>
+        <Label Text="Cash Register App" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" HorizontalTextAlignment="Center"></Label>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        
+        <Grid Padding="35,10">
+            <Grid.RowDefinitions>
+                <RowDefinition  />
+                <RowDefinition />
+                <RowDefinition  />
+                <RowDefinition  />
+                <RowDefinition />
+                <RowDefinition  />
+                <RowDefinition  />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <BoxView  Grid.ColumnSpan="2"/>
+            <Label x:Name="ItemType"
+               Grid.ColumnSpan="2"
+               Text="Type"
+               VerticalOptions="Center" 
+               FontSize="30"
+               TextColor="Black"/>
+            <Button Grid.Column="2"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="2"
+                    Text="Clear Quantity"
+                    Clicked="clearQuant">
+            </Button>
+            <Button Grid.Row="1"
+               CornerRadius="35"
+               Text="1"
+               FontSize="30"
+               Clicked="numClicked"
+               BackgroundColor="White"
+                />
+            <Button Grid.Row="1"
+               CornerRadius="35"
+               Grid.Column="1"
+               Clicked="numClicked"
+               Text="2"
+               FontSize="30"
+               BackgroundColor="White"
+                />
+            
+            <Button Grid.Row="1"
+               CornerRadius="35"
+               Clicked="numClicked"
+               Grid.Column="2"
+               Text="3"
+               FontSize="30"
+               BackgroundColor="White"
+               />
+            <Button Grid.Column="2"
+                    Grid.ColumnSpan="2"
+                    CornerRadius="35"
+                    Text="Manager"
+                    BackgroundColor="Red"
+                    TextColor= "Aqua"
+                    FontSize="25"
+                    Clicked="navToManager"
+                >
+            </Button>
+            <Label x:Name="TotalCost"
+               Grid.Row="1"
+               Grid.Column="3"
+               Text="Total"
+               FontSize="30"
+               TextColor="Black"
+               HorizontalOptions="Center"
+                />
+
+            <Button Grid.Row="2"
+               CornerRadius="35"
+               Clicked="numClicked"
+               Text="4"
+               FontSize="30"
+               BackgroundColor="White"
+                />
+            <Button Grid.Row="2"
+               CornerRadius="35"
+               Clicked="numClicked"
+               Grid.Column="1"
+               Text="5"
+               FontSize="30"
+               BackgroundColor="White"
+                />
+            <Button Grid.Row="2"
+               CornerRadius="35"
+               Clicked="numClicked"
+               Grid.Column="2"
+               Text="6"
+               FontSize="30"
+               BackgroundColor="White"
+               />
+            <Button Grid.Row="2"
+                Text="Buy"
+                Clicked="buyItem"
+                CornerRadius="35"
+                Grid.Column="3"
+                Grid.RowSpan="2"
+                BackgroundColor="Blue"
+                FontSize="30"/>
+
+
+            <Button Grid.Row="3"
+               CornerRadius="35"
+               Clicked="numClicked"
+               Text="7"
+               FontSize="30"
+               BackgroundColor="White"
+                />
+            <Button Grid.Row="3"
+               Clicked="numClicked"
+               CornerRadius="35"
+               Grid.Column="1"
+               Text="8"
+               BackgroundColor="White"
+               FontSize="30"
+                />
+            <Button Grid.Row="3"
+               CornerRadius="35"
+               Clicked="numClicked"
+               Grid.Column="2"
+               Text="9"
+               BackgroundColor="White"
+               FontSize="30"
+               />
+            <Button Grid.Row="4"
+                    CornerRadius="35"
+                    Grid.Column="1"
+                    Clicked="numClicked"
+                    Text="0"
+                    FontSize="30"
+                    BackgroundColor="White"></Button>
+            <Label Text="Quantity"
+               x:Name="ItemQuantity"
+               Grid.Row="5"
+               Grid.ColumnSpan="4"
+               VerticalOptions="Center" 
+               FontSize="30"
+               TextColor="Black"/>
+            <ListView
+                x:Name="ItemList"
+                Grid.Row="6"
+                Grid.ColumnSpan="4"
+                BackgroundColor="White"
+                ItemSelected="mylist_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         Padding="15,0">
+                                <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                    <StackLayout>
+                                        <Label x:Name="ItemName" Text="{Binding name}" TextColor="Black"></Label>
+                                        
+                                    </StackLayout>
+                                    <Label x:Name="ItemPrice" Text="{Binding price}" TextColor="Red"></Label>
+                                </StackLayout>
+                                <Label x:Name="ItemStock" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center" Text="{Binding stock}"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
